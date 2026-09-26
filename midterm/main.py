@@ -30,11 +30,8 @@ def add_movie(movie_list):
         print("Invalid Status")
         return
 
-
-    movie_format = f"{movie_title} - {movie_director} - {movie_status}"
-
+    movie_format = f"{movie_title.lower()} - {movie_director.lower()} - {movie_status}"
     movie_list.append(movie_format)
-
     print("Movie added successfully.")
 
 
@@ -50,18 +47,35 @@ def view_movies(movie_list):
 
 
 def count_watched_unwatched(movie_list):
-    # loop through the list
-    # count Watched vs Unwatched
-    # return both counts
-    pass
+    watched_counter = 0
+    unwatched_counter = 0
 
+    for movie in movie_list:
+        if "watched" in movie: 
+            watched_counter += 1
+        elif "unwatched" in movie:
+            unwatched_counter += 1
+            
+    return watched_counter, unwatched_counter
+
+
+     
 
 def find_movie(movie_list):
     # ask for a movie title
     # search the list
     # search should be case-insensitive
     # print the result or "Movie not found."
-    pass
+    movie_title = input("Search for movie title")
+
+    for movie in movie_list:
+        if movie_title in movie_list:
+            print(movie)
+        else:
+            print("Movie not found.")
+
+
+
 
 
 def main():
@@ -76,9 +90,11 @@ def main():
             case 2:
                 view_movies(movies)
             case 3:
-                pass
+                watched, unwatched = count_watched_unwatched(movies)
+                print(f"Number of watched movies: {watched}")
+                print(f"Number of unwatched movies: {unwatched}")
             case 4: 
-                pass
+                find_movie(movies)
             case 5:
                 break
 
