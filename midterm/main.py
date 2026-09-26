@@ -17,7 +17,6 @@ def display_menu():
     
 
 
-
 def add_movie(movie_list):
     # ask for title, director, and status
     # build the movie string
@@ -30,7 +29,7 @@ def add_movie(movie_list):
         print("Invalid Status")
         return
 
-    movie_format = f"{movie_title.lower()} - {movie_director.lower()} - {movie_status}"
+    movie_format = f"{movie_title.title()} - {movie_director.title()} - {movie_status.title()}"
     movie_list.append(movie_format)
     print("Movie added successfully.")
 
@@ -41,9 +40,12 @@ def view_movies(movie_list):
     if not movie_list:
         print("No available movies")
     else:
+        print("=====List of movies available=====")
         for  i, movie in enumerate(movie_list, start=1):
-            print("List of movies available.")
             print(f"{i}. {movie}")
+        print("=" * 15)    
+
+
 
 
 def count_watched_unwatched(movie_list):
@@ -51,9 +53,9 @@ def count_watched_unwatched(movie_list):
     unwatched_counter = 0
 
     for movie in movie_list:
-        if "watched" in movie: 
+        if "Watched" in movie: 
             watched_counter += 1
-        elif "unwatched" in movie:
+        elif "Unwatched" in movie:
             unwatched_counter += 1
             
     return watched_counter, unwatched_counter
@@ -66,11 +68,11 @@ def find_movie(movie_list):
     # search the list
     # search should be case-insensitive
     # print the result or "Movie not found."
-    movie_title = input("Search for movie title")
-
+    movie_title = input("Search for movie title: ")
+    
     for movie in movie_list:
-        if movie_title in movie_list:
-            print(movie)
+        if movie_title.title() in movie:
+            print(f"Search found: {movie}")
         else:
             print("Movie not found.")
 
@@ -82,8 +84,6 @@ def main():
     while True:
         display_menu()
         choice = int(input("Choose an option: "))
-
-    
         match choice:
             case 1:
                 add_movie(movies)
@@ -91,12 +91,17 @@ def main():
                 view_movies(movies)
             case 3:
                 watched, unwatched = count_watched_unwatched(movies)
+                print("=" * 10)
                 print(f"Number of watched movies: {watched}")
                 print(f"Number of unwatched movies: {unwatched}")
+                print("=" * 10)
             case 4: 
                 find_movie(movies)
             case 5:
-                break
+                print("Leaving...")
+                exit()
+            case _:
+                print("Invalid choice")
 
 main()
 
