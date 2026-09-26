@@ -52,8 +52,6 @@ print(f"The sum of {input_num1} and {input_num2} is {input_num1 + input_num2}")
 ============================================
 A MISTAKE I MADE (or one I want to avoid)
 ============================================
-[what's something confusing or easy to get wrong
-about this topic?]
 
 a common mistake i make is forgetting to use the correct data type for a variable. 
 For example, if you try to perform arithmetic operations asking user for input i forget to convert the input string to an integer or float, which can lead to errors

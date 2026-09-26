@@ -7,9 +7,9 @@ Date: september 26, 2025
 WHAT IS THIS TOPIC? (explain it like you're
 teaching a friend who's never coded before)
 ============================================
-[write your own explanation here]
+
 Control flow is the order in which a program executes code. It allows you to make decisions in your code based on certain conditions. 
-For example, you want to execute a block of code only if a certain condition is met. This is where if, elif, and else statements come in handygit.
+For example, you want to execute a block of code only if a certain condition is met. This is where if, elif, and else statements come in handy.
 
 
 ============================================
@@ -68,8 +68,7 @@ else:
 ============================================
 A MISTAKE I MADE (or one I want to avoid)
 ============================================
-[what's something confusing or easy to get wrong
-about this topic?]
+
 i always forget to use the correct comparison operators in my conditions. 
 For example, using a single equal sign (=) instead of a double equal sign (==) for comparison can lead to error. 
 Always double-check your conditions to ensure they are written correctly.
