@@ -7,7 +7,10 @@ Date: September 26, 2025
 WHAT IS THIS TOPIC? (explain it like you're
 teaching a friend who's never coded before)
 ============================================
-[write your own explanation here]
+Variables are like containers that hold values. You can think of them as labeled boxes where you can store different types of data. 
+Each variable has a name, and you can use that name to access the data stored inside it. 
+Data types refer to the kind of data that can be stored in a variable, such as numbers, text, or true/false values. 
+Understanding variables and data types is essential for writing programs because they allow you to store and manipulate data.
 
 
 ============================================
